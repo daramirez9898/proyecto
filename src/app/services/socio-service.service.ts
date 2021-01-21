@@ -41,5 +41,21 @@ export class SocioServiceService {
     return this._http.put(this.url+'updatePais/'+proveedor.numero_documento_1,params,{headers: headers});             
   }
 
+  saveAsociation(id,proveedor): Observable<any>{
+    console.log(proveedor);
+    let params = JSON.stringify(proveedor);
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.post(this.url+'asociarProveedor/'+id,params,{headers: headers});
+  }
 
+  getAsociaciones(id): Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.get(this.url+'proveedor/'+id,{headers: headers});
+  }
+
+  deleteAsociacion(id_agencia,id_resultado): Observable<any>{
+    let resultado = id_agencia+' '+id_resultado;
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.delete(this.url+'desasociarProveedor/'+resultado,{headers: headers});
+  }
 }

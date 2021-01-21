@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="message success" *ngIf="status == 'success'">
+        Se ha desasociado correctamente
+    </div>
+    <div class="message success" *ngIf="status == 'failed'">
+        No existe la asociacion
+    </div>
+
+
+    <form #asociacionAgenciaForm="ngForm" (ngSubmit)="onSubmit(asociacionAgenciaForm)">
+        <p>
+            <label for="id_agencia_1" >id de la agencia para mostrar asociaciones</label>
+            <input type="number" min="0" class="id_agencia_1"name="id_agencia_1" #name="ngModel" [(ngModel)]="id_agencia_1" pattern="[0-9]+"  required/>
+        </p>
+        <input type="submit" value="mostrar"/>
+        <a class="btn-regresar" [routerLink]="['/menuAgencia']">Regresar al menu </a>
+    </form>
+
+    <ul *ngIf="busqueda == 1"class="lista-agencias">
+        <li class="item-lista" *ngFor="let resultado of resultados; let i = index">
+            <div class="mensaje-borrado" *ngIf="status2 == success">
+                Se ha eliminado exitosamente
+            </div>    
+                <p>Numero Documento de la agencia: {{resultado.id_agencia}}</p>
+                <a (click)="delete(resultado.id_agencia)"class="btn-delete">Borrar Asociacion</a>
+        </li>
+    </ul>
+
+    <div class="condicion">
+        {{busqueda == 0}}
+    </div>
+
+
+</div>

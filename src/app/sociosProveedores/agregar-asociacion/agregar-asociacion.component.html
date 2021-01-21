@@ -1,0 +1,28 @@
+<div class="container">
+
+    <h2>Agregar una nueva Asociacion</h2>
+    <div class="message success" *ngIf="status == 'success'">
+        El nuevo proveedor se ha agregado correctamente
+    </div>
+    <div class="message success" *ngIf="status == 'failed'">
+        El nuevo proveedor no se agrego correctamente
+    </div>
+
+    <form #asociacionForm="ngForm" (ngSubmit)="onSubmit(asociacionForm)">
+        <p>
+            <label for="id_agencia" >id de la agencia a Asociar</label>
+            <input type="number" min="0" class="id_agencia_asociada"name="id_agencia" #name="ngModel" [(ngModel)]="id_agencia" pattern="[0-9]+"  required/>
+        </p>
+        <p>
+            <label for="numero_documento" >Numero de Documento del Proveedor</label>
+            <input type="number" min="0" class="numero_documento"name="numero_documento" #name="ngModel" [(ngModel)]="numero_documento" pattern="[0-9]+"  required/>
+        </p>
+        <input type="submit" value="Registrar"/>
+        <a class="btn-regresar" [routerLink]="['/menuSocio']">Regresar al menu </a>
+    </form>
+
+
+
+
+
+</div> 

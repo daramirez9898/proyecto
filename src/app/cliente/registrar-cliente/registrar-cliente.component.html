@@ -1,0 +1,22 @@
+<div class="container">
+    <h2>Agregar un nuevo cliente a un agencia</h2>
+    <div class="message success" *ngIf="status == 'success'">
+        El nuevo cliente se ha  resgistrado en la agencia
+    </div>
+    <div class="message success" *ngIf="status == 'failed'">
+        El nuevo cliente no se resgistrado en la agencia
+    </div>
+
+    <form #clienteAgenciaForm="ngForm" (ngSubmit)="onSubmit(clienteAgenciaForm)">
+        <p>
+            <label for="id_agencia">id de la agencia </label>
+            <input type="number" min="0" name="id_agencia" #name="ngModel" [(ngModel)]="id_agencia" pattern="[0-9]+"  required/>
+        </p>
+        <p>
+            <label for="id_cliente">Id del cliente a Registrar</label>
+            <input type="number" min="0" name="id_cliente" #name="ngModel" [(ngModel)]="id_cliente" pattern="[0-9]+" required/>
+        </p>
+        <input type="submit" value="Registrar"/>
+        <a class="btn-regresar" [routerLink]="['/menuCliente']">Regresar al menu </a>
+    </form>
+</div>

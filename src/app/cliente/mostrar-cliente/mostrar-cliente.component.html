@@ -1,0 +1,37 @@
+<div class="container">
+    <h4>Lista de Clientes</h4>
+    
+    
+    
+    <form #clienteAgenciaForm="ngForm" (ngSubmit)="onSubmit(clienteAgenciaForm)">
+        <p>
+            <label for="id_agencia" >id de la agencia para mostrar los clientes</label>
+            <input type="number" min="0" class="id_agencia"name="id_agencia" #name="ngModel" [(ngModel)]="id_agencia" pattern="[0-9]+"  required/>
+        </p>
+        <input type="submit" value="mostrar"/>
+        <a class="btn-regresar" [routerLink]="['/menuCliente']">Regresar al menu </a>
+    </form>
+
+    
+    
+    
+    
+    <ul *ngIf="busqueda == 1" class="lista-clientes">
+        <li class="item-lista" *ngFor="let cliente of clientes">
+            <a [routerLink]="['/modificaCliente',cliente,id_cliente]">
+                <p>Nombre: {{cliente.nombre_cliente}}</p>
+                <p>Primer Apellido: {{cliente.apellido_1}}</p>
+                <p>Segundo Apellido: {{cliente.apellido_2}}</p>
+                <p>Identificador: {{cliente.id_cliente}}</p>
+                <p>Tipo: {{cliente.tipo}}</p>
+            </a>
+            <a (click)="delete(cliente.num_registro)"class="btn-delete">Borrar Registro de la agencia</a>
+        </li>
+    </ul>
+
+
+    <div class="condicion">
+        {{busqueda == 0}}
+    </div>
+
+</div>

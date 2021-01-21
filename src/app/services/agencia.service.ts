@@ -40,6 +40,36 @@ export class AgenciaService {
   updateAgencia(agencia): Observable<any>{
     let params = JSON.stringify(agencia);
     let headers = new HttpHeaders().set('Content-Type','application/json');
-    return this._http.put(this.url+'updateAgencia/'+agencia.id_agencia,params,{headers: headers});             
+    return this._http.put(this.url+'updateAgencia/'+agencia.id_agencia,{headers: headers});             
   }
+
+  saveAsociation(id,agencia): Observable<any>{
+    console.log(agencia);
+    let params = JSON.stringify(agencia);
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.post(this.url+'asociarAgencia/'+id,params,{headers: headers});
+  }
+
+  getAsociaciones(id): Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.get(this.url+'agenciasSocios/'+id,{headers: headers});
+  }
+
+  deleteAsociacion(id_agencia_1,id_agencia_2): Observable<any>{
+    let resultado = id_agencia_1+' '+id_agencia_2;
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.delete(this.url+'desasociarAgencia/'+resultado,{headers: headers});
+  }
+
+
+  reporte(){
+    let params = {
+      "template": {"name":"socios"}
+    };
+    let headers = new HttpHeaders().set('Content-Type','Content-Type: application/json');
+    return this._http.post('http://localhost:5488/api/report',params,{headers: headers});
+  }
+
+
+
 }

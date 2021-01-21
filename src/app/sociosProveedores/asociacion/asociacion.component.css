@@ -1,0 +1,34 @@
+.condicion{
+    display: none;
+} 
+.container h2,p{
+    margin-left: 170px;
+}
+input{
+    margin-left: 80px;
+    border-radius: 50px;
+}
+.numero_documento{
+    margin-left: 10px;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+margin: 0;
+}
+
+input[type=number] { -moz-appearance:textfield; }
+
+input[type=submit],.btn-regresar,.btn-delete{
+    margin-top: 40px;
+    margin-left: 170px;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    color: white;
+    background:rgba(53,103,165,1);
+    border: 1px solid rgb(38, 107, 192);
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+}

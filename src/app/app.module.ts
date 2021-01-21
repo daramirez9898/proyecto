@@ -15,6 +15,18 @@ import { EditarAgenciaComponent } from './agencia/editar-agencia/editar-agencia.
 import { MenuAgenciaComponent } from './agencia/menu-agencia/menu-agencia.component';
 import { ModificarAgenciaComponent } from './agencia/modificar-agencia/modificar-agencia.component';
 import { MostrarAgenciaComponent } from './agencia/mostrar-agencia/mostrar-agencia.component';
+import { AsociacionComponent } from './sociosProveedores/asociacion/asociacion.component';
+import { AgregarAsociacionComponent } from './sociosProveedores/agregar-asociacion/agregar-asociacion.component';
+import { AsociacionAgenciaComponent } from './agencia/asociacion-agencia/asociacion-agencia.component';
+import { AgregarAsociacionAgenciaComponent } from './agencia/agregar-asociacion-agencia/agregar-asociacion-agencia.component';
+import { HomeComponent } from './home/home/home.component';
+import { AgregarClienteComponent } from './cliente/agregar-cliente/agregar-cliente.component';
+import { EditarClienteComponent } from './cliente/editar-cliente/editar-cliente.component';
+import { MenuClienteComponent } from './cliente/menu-cliente/menu-cliente.component';
+import { ModificarClienteComponent } from './cliente/modificar-cliente/modificar-cliente.component';
+import { MostrarClienteComponent } from './cliente/mostrar-cliente/mostrar-cliente.component';
+import { RegistrarClienteComponent } from './cliente/registrar-cliente/registrar-cliente.component';
+import { ReporteAgenciaComponent } from './agencia/reporte-agencia/reporte-agencia.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +40,19 @@ import { MostrarAgenciaComponent } from './agencia/mostrar-agencia/mostrar-agenc
     EditarAgenciaComponent,
     MenuAgenciaComponent,
     ModificarAgenciaComponent,
-    MostrarAgenciaComponent
+    MostrarAgenciaComponent,
+    AsociacionComponent,
+    AgregarAsociacionComponent,
+    AsociacionAgenciaComponent,
+    AgregarAsociacionAgenciaComponent,
+    HomeComponent,
+    AgregarClienteComponent,
+    EditarClienteComponent,
+    MenuClienteComponent,
+    ModificarClienteComponent,
+    MostrarClienteComponent,
+    RegistrarClienteComponent,
+    ReporteAgenciaComponent
   ],
   imports: [
     BrowserModule,

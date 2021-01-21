@@ -1,0 +1,30 @@
+<div class="container" *ngIf="cliente">
+    <h2>Agregar un nuevo cliente</h2>
+    <div class="message success" *ngIf="status == 'success'">
+        El nuevo cliente se ha agregado correctamente
+    </div>
+    <div class="message success" *ngIf="status == 'failed'">
+        El nuevo cliente no se agrego correctamente
+    </div>
+
+    <form #clienteForm="ngForm" (ngSubmit)="onSubmit(clienteForm)">
+        <p>
+            <label for="nombre_cliente">Nombre del cliente </label>
+            <input type="text" name="nombre_cliente" #name="ngModel" [(ngModel)]="cliente.nombre_cliente" pattern="[A-Za-z]"  required/>
+        </p>
+        <p>
+            <label for="tipo">Tipo de cliente</label>
+            <input type="text" name="tipo" #name="ngModel" [(ngModel)]="cliente.tipo"required/>
+        </p>
+        <p>
+            <label for="apellido_1">Primer Apellido</label>
+            <input type="text" name="apellido_1" #name="ngModel" [(ngModel)]="cliente.apellido_1"required/>
+        </p>
+        <p>
+            <label for="apellido_2">Segundo Apellido</label>
+            <input type="text" name="apellido_2" #name="ngModel" [(ngModel)]="cliente.apellido_2"required/>
+        </p>
+        <input type="submit" value="Registrar"/>
+        <a class="btn-regresar" [routerLink]="['/menuCliente']">Regresar al menu </a>
+    </form>
+</div>
