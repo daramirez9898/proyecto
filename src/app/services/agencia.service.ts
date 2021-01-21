@@ -63,11 +63,11 @@ export class AgenciaService {
 
 
   reporte(){
-    let params = {
-      "template": {"name":"socios"}
+    let body = {
+      "template": {"name":"Socios"}
     };
-    let headers = new HttpHeaders().set('Content-Type','Content-Type: application/json');
-    return this._http.post('http://localhost:5488/api/report',params,{headers: headers});
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.post('http://localhost:5488/api/report',body,{ responseType: 'blob' });
   }
 
 
