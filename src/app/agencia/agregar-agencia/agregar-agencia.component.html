@@ -1,0 +1,35 @@
+<div class="container" *ngIf="agencia">
+    <h2>Agregar una nueva Agencia</h2>
+    <div class="message success" *ngIf="status == 'success'">
+        La nueva Agencia se ha agregado correctamente
+    </div>
+    <div class="message success" *ngIf="status == 'failed'">
+        La nueva Agencia no se agrego correctamente
+    </div>
+
+    <form #agenciaForm="ngForm" (ngSubmit)="onSubmit(agenciaForm)">
+        <p>
+            <label for="nombre_agencia">Nombre de la agencia</label>
+            <input type="text" name="nombre_agencia" #name="ngModel" [(ngModel)]="agencia.nombre_agencia" pattern="[A-Za-z]"  required/>
+        </p>
+        <p>
+            <label for="tipo_de_operacion">Tipo de Operacion</label>
+            <input type="text" name="tipo_de_operacion" #name="ngModel" [(ngModel)]="agencia.tipo_de_operacion"required/>
+        </p>
+        <p>
+            <label for="alcance">Alcance</label>
+            <input type="text" name="alcance" #name="ngModel" [(ngModel)]="agencia.alcance"required/>
+        </p>
+        <p>
+            <label for="descripcion">Descripcion</label>
+            <input type="text" name="descripcion" #name="ngModel" [(ngModel)]="agencia.descripcion"required/>
+        </p>
+        <p>
+            <label for="email">Email</label>
+            <input type="email" name="email" #name="ngModel" [(ngModel)]="agencia.pagina_web"required/>
+        </p>
+
+        <input type="submit" value="Registrar"/>
+        <a class="btn-regresar" [routerLink]="['/menuAgencia']">Regresar al menu </a>
+    </form>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="dataProveedorComponent">
+        <h1>Nombre Del Proveedor: {{proveedor?.nombre_proveedor}}</h1>
+        <p>N~documento: {{proveedor?.numero_documento_1}}</p>
+        
+        <p>
+            <a [routerLink]="['/editarProveedor',proveedor?.numero_documento_1]"  class="button-edit">Editar</a>
+            <a (click)="deleteProveedor(proveedor?.numero_documento_1)" class="button-delete">Borrar</a>
+        </p>
+        
+    </div>
+</div> 
+ 

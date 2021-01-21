@@ -1,0 +1,13 @@
+<div class="container">
+    <h4>Lista de Agencias</h4>
+    <ul class="lista-agencias">
+        <li class="item-lista" *ngFor="let agencia of agencias">
+            <a [routerLink]="['/modificaAgencia',agencia.id_agencia]">
+                <p>Nombre: {{agencia.nombre_agencia}}</p>
+                <p>Identificador: {{agencia.id_agencia}}</p>
+                <p>Tipo de operacion:{{agencia.tipo_de_operacion}}</p>
+            </a>
+        </li>
+    </ul>
+
+</div>

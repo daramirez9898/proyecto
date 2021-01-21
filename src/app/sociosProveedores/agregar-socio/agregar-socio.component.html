@@ -1,0 +1,35 @@
+<div class="container" *ngIf="proveedor">
+    <h2>Agregar un nuevo Proveedor</h2>
+    <div class="message success" *ngIf="status == 'success'">
+        El nuevo proveedor se ha agregado correctamente
+    </div>
+    <div class="message success" *ngIf="status == 'failed'">
+        El nuevo proveedor no se agrego correctamente
+    </div>
+
+    <form #proveedorForm="ngForm" (ngSubmit)="onSubmit(proveedorForm)">
+        <p>
+            <label for="numero_documento_1" >Numero de Documento de identificacion</label>
+            <input type="number" min="0" class="numero_documento"name="numero_documento_1" #name="ngModel" [(ngModel)]="proveedor.numero_documento_1" pattern="[0-9]+"  required/>
+        </p>
+        <p>
+            <label for="nombre_proveedor">Nombre de Proveedor</label>
+            <input type="text" name="nombre_proveedor" #name="ngModel" [(ngModel)]="proveedor.nombre_proveedor" pattern="[A-Za-z]"  required/>
+        </p>
+        <p>
+            <label for="tipo_documento">Tipo de Documento</label>
+            <input type="text" name="tipo_documento" #name="ngModel" [(ngModel)]="proveedor.tipo_documento" pattern="[V|E|J]"  required/>
+        </p>
+        <p>
+            <label for="telefono">Numero de telefono</label>
+            <input type="number" min="0" name="telefono" #name="ngModel" [(ngModel)]="proveedor.telefono"required/>
+        </p>
+        <p>
+            <label for="tipo">tipo de Proveedor</label>
+            <input type="text" name="tipo" #name="ngModel" [(ngModel)]="proveedor.tipo"required/>
+        </p>
+
+        <input type="submit" value="Registrar"/>
+        <a class="btn-regresar" [routerLink]="['/menuSocio']">Regresar al menu </a>
+    </form>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="dataAgenciaComponent">
+        <h1>Nombre de la Agencia: {{agencia?.nombre_agencia}}</h1>
+        <p>Tipo de operacion: {{agencia?.tipo_de_operacion}}</p>
+        <p>Descripcion: {{agencia?.descripcion}}</p>
+        
+        <p>
+            <a [routerLink]="['/editarAgencia',agencia?.id_agencia]"  class="button-edit">Editar</a>
+            <a (click)="deleteAgencia(agencia?.id_agencia)" class="button-delete">Borrar</a>
+        </p>
+        
+    </div>
+</div> 
+ 

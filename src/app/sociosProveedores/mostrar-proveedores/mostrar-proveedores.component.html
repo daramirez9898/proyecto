@@ -1,0 +1,12 @@
+<div class="container">
+    <h4>Lista de Proveedores</h4>
+    <ul class="lista-proveedores">
+        <li class="item-lista" *ngFor="let proveedor of proveedores">
+            <a [routerLink]="['/modificaProveedor',proveedor.numero_documento_1]">
+                <p>Nombre: {{proveedor.nombre_proveedor}}</p>
+                <p>N~Documento:{{proveedor.numero_documento_1}}</p>
+            </a>
+        </li>
+    </ul>
+
+</div>
