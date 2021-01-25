@@ -18,16 +18,18 @@
     
     <ul *ngIf="busqueda == 1" class="lista-clientes">
         <li class="item-lista" *ngFor="let cliente of clientes">
-            <a [routerLink]="['/modificaCliente',cliente,id_cliente]">
+            <a [routerLink]="['/modificaCliente',cliente.id_cliente]">
                 <p>Nombre: {{cliente.nombre_cliente}}</p>
                 <p>Primer Apellido: {{cliente.apellido_1}}</p>
                 <p>Segundo Apellido: {{cliente.apellido_2}}</p>
                 <p>Identificador: {{cliente.id_cliente}}</p>
                 <p>Tipo: {{cliente.tipo}}</p>
             </a>
-            <a (click)="delete(cliente.num_registro)"class="btn-delete">Borrar Registro de la agencia</a>
+            <a (click)="deleteRegistro(cliente.num_registro)"class="btn-delete">Borrar Registro de la agencia</a>
         </li>
     </ul>
+    
+    <p *ngIf="borrado == 1">Se ha borrado exitosamente</p>
 
 
     <div class="condicion">

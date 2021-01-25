@@ -46,9 +46,9 @@ export class ClienteService {
     return this._http.delete(this.url+'deleteCliente/'+id,{headers: headers});        
   }
 
-  updateAgencia(cliente): Observable<any>{
+  updateCliente(cliente): Observable<any>{
     let params = JSON.stringify(cliente);
     let headers = new HttpHeaders().set('Content-Type','application/json');
-    return this._http.put(this.url+'updateCliente/'+cliente.id_cliente,{headers: headers});             
+    return this._http.put(this.url+'updateCliente/'+cliente.id_cliente,params,{headers: headers});             
   }
 }

@@ -22,6 +22,7 @@ export class EditarAgenciaComponent implements OnInit {
     private _route: ActivatedRoute
   ){
     this.url = Global.url;
+    this.agencia = new Agencia(0,'','','','','');
   }
   ngOnInit(){
     this._route.params.subscribe(params =>{

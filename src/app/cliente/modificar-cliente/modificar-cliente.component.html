@@ -1,1 +1,13 @@
-<p>modificar-cliente works!</p>
+<div class="container">
+    <div class="dataClientComponent">
+        <h1>Nombre del Cliente: {{cliente?.nombre_cliente}}</h1>
+        <p>Tipo de cliente: {{cliente?.tipo}}</p>
+        <p>Apellidos: {{cliente?.apellido_1}} {{cliente?.apellido_2}}</p>
+        <p>
+            <a [routerLink]="['/editarCliente',cliente?.id_cliente]"  class="button-edit">Editar</a>
+            <a (click)="deleteCliente(cliente?.id_cliente)" class="button-delete">Borrar</a>
+        </p>
+        
+    </div>
+</div> 
+ 

@@ -1,0 +1,66 @@
+<div class="container">
+    <h1>Angular Select Dropdown Example - tutsmake.com</h1>
+         
+    <form #viajeroForm="ngForm" (ngSubmit)="onSubmit()">
+        <p>
+            <label for="primer_nombre">Primer nombre Del viajero</label>
+            <input type="text" name="primer_nombre" #name="ngModel" [(ngModel)]="viajero.primer_nombre" pattern="[A-Za-z]"  required/>
+        </p>
+        <p>
+            <label for="segundo_nombre">Segundo nombre Del viajero</label>
+            <input type="text" name="segundo_nombre" #name="ngModel" [(ngModel)]="viajero.segundo_nombre" pattern="[A-Za-z]"  required/>
+        </p>
+        <p>
+            <label for="primer_apellido">Primer apellido Del viajero</label>
+            <input type="text" name="primer_apellido" #name="ngModel" [(ngModel)]="viajero.primer_apellido" pattern="[A-Za-z]"  required/>
+        </p>
+        <p>
+            <label for="segundo_apellido">Segundo apellido Del viajero</label>
+            <input type="text" name="segundo_apellido" #name="ngModel" [(ngModel)]="viajero.segundo_apellido" pattern="[A-Za-z]"  required/>
+        </p>
+        <p>
+            <label for="genero">Genero</label>
+            <input type="text" name="genero" #name="ngModel" [(ngModel)]="viajero.genero" pattern="[A-Za-z]"  required/>
+        </p>
+        <p>
+            <label for="fecha_nacimiento">fecha de nacimiento</label>
+            <input type="date" name="fecha_nacimiento" #name="ngModel" [(ngModel)]="viajero.fecha_nacimiento"required/>
+        </p>
+    </form>
+        <form [formGroup]="formPais" (ngSubmit)="onSubmit()">
+                
+            <div class="form1">
+                <label for="paises">pais:</label>
+                <select formControlName="pais" class="form-control">
+                    <option disabled>Select pais</option>
+                    <option>Selecciona un pais</option>
+                    <option *ngFor="let pais of paises">{{pais}}</option>
+                </select>
+                <div *ngIf="f.pais.touched &amp;&amp; f.pais.invalid" class="alert alert-danger">
+                    <div *ngIf="f.pais.errors.required">pais is required.</div>
+                </div>
+            </div>
+
+            
+        </form>
+        <form [formGroup]="formCiudad" (ngSubmit)="onSubmit()">
+            <div class="form1">
+            <label for="ciudades">ciudad:</label>
+                <select formControlName="ciudad" class="form-control">
+                    <option disabled>Select ciudad</option>
+                    <option>Selecciona una ciudad</option>
+                    <option *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+                </select>
+                <div *ngIf="f2.ciudad.touched &amp;&amp; f2.ciudad.invalid" class="alert alert-danger">
+                    <div *ngIf="f2.ciudad.errors.required">ciudad is required.</div>
+                </div>
+            </div> 
+            <br>
+            <button id="submit"class="btn btn-primary" type="submit" [disabled]="!formPais.valid && !formCiudad.valid">Submit</button>
+            <a class="btn-regresar"[routerLink]="['/menuViajero']">Regresar al menu</a>
+        </form>
+        
+        <p *ngIf="agregado == 1">Se ha agregado el viajero</p>
+
+    
+</div>

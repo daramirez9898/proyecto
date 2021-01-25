@@ -38,7 +38,7 @@ export class SocioServiceService {
   updateSocio(proveedor): Observable<any>{
     let params = JSON.stringify(proveedor);
     let headers = new HttpHeaders().set('Content-Type','application/json');
-    return this._http.put(this.url+'updatePais/'+proveedor.numero_documento_1,params,{headers: headers});             
+    return this._http.put(this.url+'updateProveedor/'+proveedor.numero_documento_1,params,{headers: headers});             
   }
 
   saveAsociation(id,proveedor): Observable<any>{

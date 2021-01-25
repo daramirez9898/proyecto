@@ -1,0 +1,39 @@
+<div class="container">
+    <h4>Lista de viajeros</h4>
+    
+    
+    
+    <form #viajeroAgenciaForm="ngForm" (ngSubmit)="onSubmit(viajeroAgenciaForm)">
+        <p>
+            <label for="id_agencia" >id de la agencia para mostrar los viajeros</label>
+            <input type="number" min="0" class="id_agencia"name="id_agencia" #name="ngModel" [(ngModel)]="id_agencia" pattern="[0-9]+"  required/>
+        </p>
+        <input type="submit" value="mostrar"/>
+        <a class="btn-regresar" [routerLink]="['/menuViajero']">Regresar al menu </a>
+    </form>
+
+    
+    
+    
+    
+    <ul *ngIf="busqueda == 1" class="lista-viajeros">
+        <li class="item-lista" *ngFor="let viajero of viajeros">
+            <a [routerLink]="['/modificaViajero',viajero.id_viajero]">
+                <p>Nombre: {{viajero.primer_nombre}} {{viajero.segundo_nombre}}</p>
+                <p>Apellidos: {{viajero.primer_apellido}} {{viajero.segundo_apellido}}</p>
+                <p>Identificador: {{viajero.id_viajero}}</p>
+                <p>Fecha de Nacimiento: {{viajero.fecha_nacimiento}}</p>
+                <p>Genero: {{viajero.genero}}</p>
+            </a>
+            <a (click)="deleteRegistro(viajero.numunico)"class="btn-delete">Borrar Registro de la agencia</a>
+        </li>
+    </ul>
+    
+    <p *ngIf="borrado == 1">Se ha borrado exitosamente</p>
+
+
+    <div class="condicion">
+        {{busqueda == 0}}
+    </div>
+
+</div>

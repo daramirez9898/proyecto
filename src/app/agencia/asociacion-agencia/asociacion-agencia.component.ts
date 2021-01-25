@@ -10,6 +10,7 @@ import { AgenciaService } from '../../services/agencia.service';
 export class AsociacionAgenciaComponent implements OnInit {
   public url:string;
   public status:string;
+  public status2:string;
   public id_agencia_1:number;
   public resultados:any;
   public busqueda:number;
@@ -47,10 +48,12 @@ export class AsociacionAgenciaComponent implements OnInit {
     console.log(this.id_agencia_1,id_agencia_2);
     this._agenciaService.deleteAsociacion(this.id_agencia_1,id_agencia_2).subscribe(
       response=>{
-        this.status='success';
+        this.status2='success';
+        console.log('entro');
       },
       error=>{
         console.log(<any>error);
+        this.status2='failed';
       }
     );
   }

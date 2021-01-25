@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="dataViajeroComponent">
+        <h1>Nombre del Viajero: {{viajero?.primer_nombre}} {{viajero?.primer_apellido}}</h1>
+        <p>fecha de nacimiento: {{viajero?.fecha_nacimiento}}</p>
+        <p>genero: {{viajero?.genero}}</p>
+        <p>
+            <a [routerLink]="['/editarViajero',viajero?.id_viajero]"  class="button-edit">Editar</a>
+            <a (click)="deleteViajero(viajero?.id_viajero)" class="button-delete">Borrar</a>
+        </p>
+        
+    </div>
+</div> 

@@ -2,6 +2,9 @@
     <div class="dataProveedorComponent">
         <h1>Nombre Del Proveedor: {{proveedor?.nombre_proveedor}}</h1>
         <p>N~documento: {{proveedor?.numero_documento_1}}</p>
+        <p>Tipo de Proveedor: {{proveedor?.tipo_proveedor}}</p>
+        <p>Numero de telefono: {{proveedor?.telefono_proveedor}}</p>
+
         
         <p>
             <a [routerLink]="['/editarProveedor',proveedor?.numero_documento_1]"  class="button-edit">Editar</a>

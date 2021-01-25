@@ -1,22 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from '../../models/cliente';
-import { ClienteService } from '../../services/cliente.service';
+import { ViajeroService } from '../../services/viajero.service';
 import { Global } from '../../services/global';
 import { ActivatedRoute,Router, Params } from '@angular/router';
-
 @Component({
-  selector: 'app-modificar-cliente',
-  templateUrl: './modificar-cliente.component.html',
-  styleUrls: ['./modificar-cliente.component.css'],
-  providers: [ClienteService]
+  selector: 'app-modificar-viajero',
+  templateUrl: './modificar-viajero.component.html',
+  styleUrls: ['./modificar-viajero.component.css'],
+  providers: [ViajeroService]
 })
-export class ModificarClienteComponent implements OnInit {
+export class ModificarViajeroComponent implements OnInit {
 
   public url:string;
-  public cliente: any;
+  public viajero: any;
 
   constructor(
-    private _clienteService: ClienteService,
+    private _viajeroService: ViajeroService,
     private _router: Router,
     private _route: ActivatedRoute
   ) { 
@@ -27,18 +25,18 @@ export class ModificarClienteComponent implements OnInit {
     this._route.params.subscribe(params =>{
       let id = params.id;
 
-      this.getCliente(id);
+      this.getViajero(id);
     });
 
   }
 
 
-  getCliente(id){
-    this._clienteService.getCliente(id).subscribe(
+  getViajero(id){
+    this._viajeroService.getviajero(id).subscribe(
       response =>{
         console.log(response);
-        this.cliente= response[0];
-        console.log(this.cliente);
+        this.viajero= response[0];
+        console.log(this.viajero);
       },
       error =>{
         console.log(<any> error)
@@ -46,12 +44,12 @@ export class ModificarClienteComponent implements OnInit {
     )
   }
 
-  deleteCliente(id){
-    this._clienteService.deleteCliente(id).subscribe(
+  deleteViajero(id){
+    this._viajeroService.deleteViajero(id).subscribe(
       response =>{
         console.log(response);
         if(response){
-          this._router.navigate(['mostrarClientes']);
+          this._router.navigate(['mostrarViajeros']);
         }
       },
       error =>{

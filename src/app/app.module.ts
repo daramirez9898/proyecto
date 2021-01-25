@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,6 +28,12 @@ import { ModificarClienteComponent } from './cliente/modificar-cliente/modificar
 import { MostrarClienteComponent } from './cliente/mostrar-cliente/mostrar-cliente.component';
 import { RegistrarClienteComponent } from './cliente/registrar-cliente/registrar-cliente.component';
 import { ReporteAgenciaComponent } from './agencia/reporte-agencia/reporte-agencia.component';
+import { AgregarViajeroComponent } from './viajero/agregar-viajero/agregar-viajero.component';
+import { MenuViajeroComponent } from './viajero/menu-viajero/menu-viajero.component';
+import { RegistrarViajeroComponent } from './viajero/registrar-viajero/registrar-viajero.component';
+import { MostrarViajerosComponent } from './viajero/mostrar-viajeros/mostrar-viajeros.component';
+import { ModificarViajeroComponent } from './viajero/modificar-viajero/modificar-viajero.component';
+import { EditarViajeroComponent } from './viajero/editar-viajero/editar-viajero.component';
 
 @NgModule({
   declarations: [
@@ -52,13 +59,20 @@ import { ReporteAgenciaComponent } from './agencia/reporte-agencia/reporte-agenc
     ModificarClienteComponent,
     MostrarClienteComponent,
     RegistrarClienteComponent,
-    ReporteAgenciaComponent
+    ReporteAgenciaComponent,
+    AgregarViajeroComponent,
+    MenuViajeroComponent,
+    RegistrarViajeroComponent,
+    MostrarViajerosComponent,
+    ModificarViajeroComponent,
+    EditarViajeroComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -38,9 +38,10 @@ export class AgenciaService {
   }
 
   updateAgencia(agencia): Observable<any>{
+    console.log(agencia);
     let params = JSON.stringify(agencia);
     let headers = new HttpHeaders().set('Content-Type','application/json');
-    return this._http.put(this.url+'updateAgencia/'+agencia.id_agencia,{headers: headers});             
+    return this._http.put(this.url+'updateAgencia/'+agencia.id_agencia,params,{headers: headers});             
   }
 
   saveAsociation(id,agencia): Observable<any>{
@@ -63,13 +64,12 @@ export class AgenciaService {
 
 
   reporte(){
-    let params = {
-      "template": {"name":"socios"}
+    let body = {
+      "template": {"name":"Socios"}
     };
-    let headers = new HttpHeaders().set('Content-Type','Content-Type: application/json');
-    return this._http.post('http://localhost:5488/api/report',params,{headers: headers});
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.post('http://localhost:5488/api/report',body,{ responseType: 'blob' });
   }
-
 
 
 }

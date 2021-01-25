@@ -1,12 +1,5 @@
 <div class="container">
 
-    <div class="message success" *ngIf="status == 'success'">
-        Se ha desasociado correctamente
-    </div>
-    <div class="message success" *ngIf="status == 'failed'">
-        No existe la asociacion
-    </div>
-
 
     <form #asociacionAgenciaForm="ngForm" (ngSubmit)="onSubmit(asociacionAgenciaForm)">
         <p>
@@ -17,11 +10,12 @@
         <a class="btn-regresar" [routerLink]="['/menuAgencia']">Regresar al menu </a>
     </form>
 
+    <div class="mensaje-borrado" *ngIf="status2 == 'success' ">
+        Se ha eliminado exitosamente
+    </div>   
+
     <ul *ngIf="busqueda == 1"class="lista-agencias">
-        <li class="item-lista" *ngFor="let resultado of resultados; let i = index">
-            <div class="mensaje-borrado" *ngIf="status2 == success">
-                Se ha eliminado exitosamente
-            </div>    
+        <li class="item-lista" *ngFor="let resultado of resultados; let i = index"> 
                 <p>Numero Documento de la agencia: {{resultado.id_agencia}}</p>
                 <a (click)="delete(resultado.id_agencia)"class="btn-delete">Borrar Asociacion</a>
         </li>

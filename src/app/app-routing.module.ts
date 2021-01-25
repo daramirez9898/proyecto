@@ -28,6 +28,12 @@ import { ModificarClienteComponent } from './cliente/modificar-cliente/modificar
 import { MostrarClienteComponent } from './cliente/mostrar-cliente/mostrar-cliente.component';
 import { RegistrarClienteComponent } from './cliente/registrar-cliente/registrar-cliente.component';
 
+import { AgregarViajeroComponent } from './viajero/agregar-viajero/agregar-viajero.component';
+import { EditarViajeroComponent } from './viajero/editar-viajero/editar-viajero.component';
+import { MenuViajeroComponent } from './viajero/menu-viajero/menu-viajero.component';
+import { MostrarViajerosComponent } from './viajero/mostrar-viajeros/mostrar-viajeros.component';
+import { ModificarViajeroComponent } from './viajero/modificar-viajero/modificar-viajero.component';
+import { RegistrarViajeroComponent } from './viajero/registrar-viajero/registrar-viajero.component';
 
 
 const routes: Routes = [
@@ -55,7 +61,16 @@ const routes: Routes = [
   {path:'mostrarClientes',component:MostrarClienteComponent},
   {path:'modificaCliente/:id',component:ModificarClienteComponent},
   {path:'editarCliente/:id',component:EditarClienteComponent},
-  {path:'resgistrarCliente',component:RegistrarClienteComponent} 
+  {path:'resgistrarCliente',component:RegistrarClienteComponent},
+  
+  
+  {path:'agregarViajero', component:AgregarViajeroComponent},
+  {path:'menuViajero',component:MenuViajeroComponent},
+  {path:'mostrarViajeros',component:MostrarViajerosComponent},
+  {path:'modificaViajero/:id',component:ModificarViajeroComponent},
+  {path:'editarViajero/:id',component:EditarViajeroComponent},
+  {path:'registrarViajero',component:RegistrarViajeroComponent}
+
 
 
 ];
