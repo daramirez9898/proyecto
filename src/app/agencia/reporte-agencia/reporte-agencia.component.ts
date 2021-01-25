@@ -26,6 +26,7 @@ export class ReporteAgenciaComponent implements OnInit {
       response =>{
         this.respuesta=response;
         this.downloadFile();
+        
       }
     );
   }
