@@ -41,6 +41,8 @@ import { AgregarItinerarioComponent } from './paquete/agregar-itinerario/agregar
 import { MenuPaqueteComponent } from './paquete/menu-paquete/menu-paquete.component';
 import { MostrarPaqueteComponent } from './paquete/mostrar-paquete/mostrar-paquete.component';
 
+
+import { SeleccionarPaqueteComponent } from './compra/seleccionar-paquete/seleccionar-paquete.component';
 //import { SeleccionarPaqueteComponent } from './compraPaquete/seleccionar-paquete/seleccionar-paquetes.component';
 
 
@@ -85,7 +87,9 @@ const routes: Routes = [
   {path:'menuPaquete',component:MenuPaqueteComponent},
   {path:'mostrarPaquetes',component:MostrarPaqueteComponent},
 
-  //{path:'paquetesCompra',component:SeleccionarPaqueteComponent}
+
+
+  {path:'paquetesCompra',component:SeleccionarPaqueteComponent}
 
   
 

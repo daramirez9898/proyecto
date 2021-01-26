@@ -38,6 +38,7 @@ import { AgregarPaqueteComponent } from './paquete/agregar-paquete/agregar-paque
 import { MostrarPaqueteComponent } from './paquete/mostrar-paquete/mostrar-paquete.component';
 import { MenuPaqueteComponent } from './paquete/menu-paquete/menu-paquete.component';
 import { AgregarItinerarioComponent } from './paquete/agregar-itinerario/agregar-itinerario.component';
+import { SeleccionarPaqueteComponent } from './compra/seleccionar-paquete/seleccionar-paquete.component';
 
 @NgModule({
   declarations: [
@@ -73,7 +74,8 @@ import { AgregarItinerarioComponent } from './paquete/agregar-itinerario/agregar
     AgregarPaqueteComponent,
     MostrarPaqueteComponent,
     MenuPaqueteComponent,
-    AgregarItinerarioComponent
+    AgregarItinerarioComponent,
+    SeleccionarPaqueteComponent
   ],
   imports: [
     BrowserModule,
