@@ -1,0 +1,16 @@
+<form [formGroup]="formpaquete" (ngSubmit)="onSubmit()">
+    <div class="form1">
+    <label for="paquetes">Paquete:</label>
+        <select formControlName="paquete" class="form-control">
+            <option disabled>Select paquete</option>
+            <option>Selecciona un paquete</option>
+            <option *ngFor="let paquete of paquetes">{{paquete}}</option>
+        </select>
+        <div *ngIf="f.paquete.touched &amp;&amp; f.paquete.invalid" class="alert alert-danger">
+            <div *ngIf="f.paquete.errors.required">paquete is required.</div>
+        </div>
+    </div> 
+    <br>
+    <button id="submit"class="btn btn-primary" type="submit" [disabled]="!formpaquete.valid">Submit</button>
+    
+</form>

@@ -38,6 +38,11 @@ export class PaqueteService {
     return this._http.get(this.url+'atraccionesPaquete/'+id,{headers: headers});
   }
 
+  getCompraPaquetes():Observable<any>{
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.post(this.url+'paquetesCompra',{headers: headers});
+  }
+
 
 
 
