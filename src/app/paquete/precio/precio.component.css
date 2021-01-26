@@ -1,12 +1,9 @@
-.container h2,p,.form1{
+.container h2,p,select,.form1{
     margin-left: 170px;
 }
 input,select{
     margin-left: 80px;
     border-radius: 50px;
-}
-.numero_documento{
-    margin-left: 10px;
 }
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
@@ -16,7 +13,7 @@ margin: 0;
 
 input[type=number] { -moz-appearance:textfield; }
 
-#submit,.btn-regresar,.btn-siguiente{
+input[type=submit],.btn-regresar{
     margin-top: 60px;
     margin-left: 170px;
     text-decoration: none;

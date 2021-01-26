@@ -1,16 +1,36 @@
-<form [formGroup]="formCiudad" (ngSubmit)="onSubmit()">
-    <div class="form1">
-    <label for="ciudades">ciudad:</label>
-        <select formControlName="ciudad" class="form-control">
-            <option disabled>Select ciudad</option>
-            <option>Selecciona una ciudad</option>
-            <option *ngFor="let ciudad of ciudades">{{ciudad}}</option>
-        </select>
-        <div *ngIf="f.ciudad.touched &amp;&amp; f.ciudad.invalid" class="alert alert-danger">
-            <div *ngIf="f.ciudad.errors.required">ciudad is required.</div>
-        </div>
-    </div> 
-    <br>
-    <button id="submit"class="btn btn-primary" type="submit" [disabled]="!formCiudad.valid">Submit</button>
-    <a class="btn-regresar"[routerLink]="['/menuPaquete']">Regresar al menu</a>
-</form>
+<div class="itinerario">
+
+
+    <p *ngIf="agregado == 1"> Se ha agregado la ciudad </p>
+
+
+
+    <form #itinerarioForm="ngForm" (ngSubmit)="onSubmit()">
+        <p>
+            <label for="orden" >introduzca el orden</label>
+            <input type="text" name="orden" #name="ngModel" [(ngModel)]="itinerario.orden" required/>
+        </p>
+        <p>
+            <label for="tiempo_estadia" >introduzca el tiempo de estadia</label>
+            <input type="text" name="tiempo_estadia" #name="ngModel" [(ngModel)]="itinerario.tiempo_estadia" required/>
+        </p>
+    </form>
+    <form [formGroup]="formCiudad" (ngSubmit)="onSubmit()">
+        <div class="form1">
+        <label for="ciudades">ciudad:</label>
+            <select formControlName="ciudad" class="form-control">
+                <option disabled>Select ciudad</option>
+                <option>Selecciona una ciudad</option>
+                <option *ngFor="let ciudad of ciudades">{{ciudad}}</option>
+            </select>
+            <div *ngIf="f.ciudad.touched &amp;&amp; f.ciudad.invalid" class="alert alert-danger">
+                <div *ngIf="f.ciudad.errors.required">ciudad is required.</div>
+            </div>
+        </div> 
+        <br>
+        <button id="submit"class="btn btn-primary" type="submit" [disabled]="!formCiudad.valid">Registrar ciudad</button>
+        <a class="btn-siguiente"[routerLink]="['/agregarAtraccion',id_paquete]">continuar si ya agrego todas las ciudades</a>
+        <a class="btn-regresar"[routerLink]="['/menuPaquete']">Regresar al menu</a>
+    </form>
+
+</div>

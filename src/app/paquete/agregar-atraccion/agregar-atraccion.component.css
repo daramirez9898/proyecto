@@ -1,6 +1,9 @@
 .container h2,p,.form1{
     margin-left: 170px;
 }
+p{
+    width: 50%;
+}
 input,select{
     margin-left: 80px;
     border-radius: 50px;
@@ -12,6 +15,11 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
 -webkit-appearance: none;
 margin: 0;
+}
+
+#orden{
+    margin-left: 570px;
+    margin-top: -128px;
 }
 
 input[type=number] { -moz-appearance:textfield; }

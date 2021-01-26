@@ -1,0 +1,32 @@
+    <div class="infoAtraccion">
+        <div *ngFor="let atraccion of atracciones">
+            <p><strong>Id de la atraccion: {{atraccion.id_atraccion}}</strong></p>
+            <p>nombre de la atraccion: {{atraccion.nombre_atraccion}}</p>
+            <p>descripcion de la atraccion: {{atraccion.descripcion_atraccion}}</p>
+        </div>
+    </div>
+    <br>
+    <form [formGroup]="formAtraccion" (ngSubmit)="onSubmit()">
+        <div class="form1">
+        <label for="atracciones">Atraccion:</label>
+            <select formControlName="atraccion" class="form-control">
+                <option disabled>Select atraccion</option>
+                <option>Selecciona una atraccion</option>
+                <option *ngFor="let atraccion of atracciones">{{atraccion.id_atraccion}}</option>
+            </select>
+            <div *ngIf="f.atraccion.touched &amp;&amp; f.atraccion.invalid" class="alert alert-danger">
+                <div *ngIf="f.atraccion.errors.required">atraccion is required.</div>
+            </div>
+        </div>
+        <button id="submit"class="btn btn-primary" type="submit" [disabled]="!formAtraccion.valid">Registrar Atraccion</button>
+    </form>
+
+    <p id="orden">
+        <label for="orden_de_visita" >introduzca el orden de visita</label>
+        <input type="text" name="orden_de_visita" #name="ngModel" [(ngModel)]="orden_de_visita" required/>
+    </p>
+    <br>
+
+    
+    <a class="btn-siguiente"[routerLink]="['/agregarPrecio',id_paquete]">continuar si ya agrego todas las ciudades</a>
+    <a class="btn-regresar"[routerLink]="['/menuPaquete']">Regresar al menu</a>

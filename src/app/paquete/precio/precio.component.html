@@ -1,0 +1,15 @@
+<div class="container">
+    
+    <div class="mensaje" *ngIf="agregado==1">
+        Se ha agregado el precio correctamente
+    </div>
+
+    <form #precioForm="ngForm" (ngSubmit)="onSubmit(precioForm)">
+        <p>
+            <label for="costo_base">Agregue el costo base del paquete</label>
+            <input type="number" min="0" name="costo_base" #name="ngModel" [(ngModel)]="costo_base" required/>
+        </p>
+        <input type="submit" value="Registrar precio"/>
+        <a class="btn-regresar" [routerLink]="['/menuPaquete']">Regresar al menu </a>
+    </form>
+</div>

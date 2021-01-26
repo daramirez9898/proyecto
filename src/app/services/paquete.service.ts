@@ -28,6 +28,25 @@ export class PaqueteService {
     return this._http.post(this.url+'nuevoItinerario',params,{headers: headers});
   }
 
+  saveAtraccion(orden_de_visita,atraccion,paquete){
+    let ayuda = {orden:orden_de_visita,id_atraccion:atraccion,id_paquete:paquete};
+    console.log(ayuda);
+    let params = JSON.stringify(ayuda);
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.post(this.url+'agregarAtraccion',params,{headers: headers});
+  }
+
+  savePrecio(id_paquete,costo){
+    let params = JSON.stringify({
+      precio:costo,
+      paquete:id_paquete
+    });
+    console.log(params);
+    let headers = new HttpHeaders().set('Content-Type','application/json');
+    return this._http.put(this.url+'updatePrecio/'+id_paquete,params,{headers: headers});
+
+  }
+
   getCiudades(): Observable<any>{
     let headers = new HttpHeaders().set('Content-Type','application/json');
     return this._http.get(this.url+'ciudades',{headers: headers});

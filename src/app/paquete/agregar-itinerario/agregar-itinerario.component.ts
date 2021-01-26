@@ -11,10 +11,11 @@ import { FormGroup, FormControl, Validators} from '@angular/forms';
   providers: [PaqueteService]
 })
 export class AgregarItinerarioComponent implements OnInit {
-
+  public id_agencia:any;
+  public id_paquete:number;
   public ciudades = <any>[];
   public agregado:number;
-  public itinerio: Itinerario;
+  public itinerario: Itinerario;
 
   constructor(
     private _paqueteService: PaqueteService,
@@ -23,8 +24,12 @@ export class AgregarItinerarioComponent implements OnInit {
   ) { }
 
   ngOnInit(){
+    this.id_agencia = this._route.snapshot.params.id1;
+    this.id_paquete = this._route.snapshot.params.id2
+    console.log(this.id_agencia,this.id_paquete);
     this.getCiudades();
     this.agregado =0;
+    this.itinerario = new Itinerario(0,0,0,0,0,0);
   }
 
   formCiudad = new FormGroup({
@@ -50,14 +55,27 @@ export class AgregarItinerarioComponent implements OnInit {
   }
 
   onSubmit(){
+    this.itinerario.edw_ciudad_id_ciudad=this.formCiudad.value.ciudad;
+    this.itinerario.edw_paquete_edw_agencia_id_agencia=this.id_agencia;
+    this.itinerario.edw_paquete_id_paquete=this.id_paquete;
+    console.log(this.itinerario);
+    this._paqueteService.saveItinerario(this.itinerario).subscribe(
+      response=>{
+        this.agregado=1;
 
+      },
+      error=>{
+        this.agregado=2;
+      }
+    );
   }
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+

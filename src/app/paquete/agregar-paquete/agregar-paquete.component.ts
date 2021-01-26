@@ -13,6 +13,8 @@ export class AgregarPaqueteComponent implements OnInit {
 
   public paquete: Paquete;
   public status: string;
+  public id_paquete:number;
+  public id_agencia:number;
 
   constructor(
     private _paqueteService: PaqueteService,
@@ -31,7 +33,9 @@ export class AgregarPaqueteComponent implements OnInit {
       response =>{
         if(response){
           this.status='success';
-          this._router.navigate(['agregarItinerario']);
+          this.id_agencia=this.paquete.edw_agencia_id_agencia;
+          this.id_paquete=response[0].id_paquete;
+          this._router.navigate(['agregarItinerario/',this.id_agencia,this.id_paquete]);
         }else{
           this.status='failed';
         }

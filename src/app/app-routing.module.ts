@@ -40,6 +40,9 @@ import { AgregarPaqueteComponent } from './paquete/agregar-paquete/agregar-paque
 import { AgregarItinerarioComponent } from './paquete/agregar-itinerario/agregar-itinerario.component';
 import { MenuPaqueteComponent } from './paquete/menu-paquete/menu-paquete.component';
 import { MostrarPaqueteComponent } from './paquete/mostrar-paquete/mostrar-paquete.component';
+import { AgregarAtraccionComponent } from './paquete/agregar-atraccion/agregar-atraccion.component';
+import { PrecioComponent } from './paquete/precio/precio.component';
+import { MostrarPaquetesComponent } from './paquete/mostrar-paquetes/mostrar-paquetes.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -78,8 +81,11 @@ const routes: Routes = [
 
 
   {path:'agregarPaquete',component:AgregarPaqueteComponent},
-  {path:'agregarItinerario',component:AgregarItinerarioComponent},
+  {path:'agregarItinerario/:id1/:id2',component:AgregarItinerarioComponent},
+  {path:'agregarPrecio/:id',component:PrecioComponent},
   {path:'menuPaquete',component:MenuPaqueteComponent},
+  {path:'mostrarPaquetes',component:MostrarPaqueteComponent},
+  {path:'agregarAtraccion/:id',component:AgregarAtraccionComponent},
   {path:'mostrarPaquetes',component:MostrarPaqueteComponent}
 
 
