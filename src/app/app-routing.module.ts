@@ -45,7 +45,7 @@ import { PrecioComponent } from './paquete/precio/precio.component';
 import { MostrarPaquetesComponent } from './paquete/mostrar-paquetes/mostrar-paquetes.component';
 
 
-import { SeleccionarPaqueteComponent } from './compra/seleccionar-paquete/seleccionar-paquete.component';
+//import { SeleccionarPaqueteComponent } from './compra/seleccionar-paquete/seleccionar-paquete.component';
 //import { SeleccionarPaqueteComponent } from './compraPaquete/seleccionar-paquete/seleccionar-paquetes.component';
 
 
@@ -94,7 +94,7 @@ const routes: Routes = [
   {path:'mostrarPaquetes',component:MostrarPaqueteComponent},
 
 
-  {path:'paquetesCompra',component:SeleccionarPaqueteComponent}
+  //{path:'paquetesCompra',component:SeleccionarPaqueteComponent}
 
   
 
