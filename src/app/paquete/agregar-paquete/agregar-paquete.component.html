@@ -1,0 +1,29 @@
+<div class="container" *ngIf="paquete">
+    <h2>Agregar un nuevo Paquete</h2>
+    
+    <form #paqueteForm="ngForm" (ngSubmit)="onSubmit(paqueteForm)">
+        <p>
+            <label for="numero_paquete" >Nombre del Paquete</label>
+            <input type="text" name="numero_paquete" #name="ngModel" [(ngModel)]="paquete.numero_paquete" required/>
+        </p>
+        <p>
+            <label for="duracion_paquete_dias">Duracion del paquete</label>
+            <input type="number" min="0" name="duracion_paquete_dias" #name="ngModel" [(ngModel)]="paquete.duracion_paquete_dias"required/>
+        </p>
+        <p>
+            <label for="cantidad_personas">Cantidad de personas</label>
+            <input type="number" min="0" name="cantidad_personas" #name="ngModel" [(ngModel)]="paquete.cantidad_personas"required/>
+        </p>
+        <p>
+            <label for="descripcion">Descripcion del paquete</label>
+            <input type="text" name="descripcion" #name="ngModel" [(ngModel)]="paquete.descripcion" required/>
+        </p>
+        <p>
+            <label for="edw_agencia_id_agencia">Agencia que brinda el paquete</label>
+            <input type="number" name="edw_agencia_id_agencia" #name="ngModel" [(ngModel)]="paquete.edw_agencia_id_agencia"required/>
+        </p>
+
+        <input type="submit" value="Registrar"/>
+        <a class="btn-regresar" [routerLink]="['/menuPaquete']">Regresar al menu </a>
+    </form>
+</div>

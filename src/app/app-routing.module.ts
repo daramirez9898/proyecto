@@ -36,6 +36,11 @@ import { ModificarViajeroComponent } from './viajero/modificar-viajero/modificar
 import { RegistrarViajeroComponent } from './viajero/registrar-viajero/registrar-viajero.component';
 
 
+import { AgregarPaqueteComponent } from './paquete/agregar-paquete/agregar-paquete.component';
+import { AgregarItinerarioComponent } from './paquete/agregar-itinerario/agregar-itinerario.component';
+import { MenuPaqueteComponent } from './paquete/menu-paquete/menu-paquete.component';
+import { MostrarPaqueteComponent } from './paquete/mostrar-paquete/mostrar-paquete.component';
+
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'agregarSocio',component:AgregarSocioComponent},
@@ -69,7 +74,14 @@ const routes: Routes = [
   {path:'mostrarViajeros',component:MostrarViajerosComponent},
   {path:'modificaViajero/:id',component:ModificarViajeroComponent},
   {path:'editarViajero/:id',component:EditarViajeroComponent},
-  {path:'registrarViajero',component:RegistrarViajeroComponent}
+  {path:'registrarViajero',component:RegistrarViajeroComponent},
+
+
+  {path:'agregarPaquete',component:AgregarPaqueteComponent},
+  {path:'agregarItinerario',component:AgregarItinerarioComponent},
+  {path:'menuPaquete',component:MenuPaqueteComponent},
+  {path:'mostrarPaquetes',component:MostrarPaqueteComponent}
+
 
 
 

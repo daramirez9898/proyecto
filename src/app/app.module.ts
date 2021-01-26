@@ -34,6 +34,10 @@ import { RegistrarViajeroComponent } from './viajero/registrar-viajero/registrar
 import { MostrarViajerosComponent } from './viajero/mostrar-viajeros/mostrar-viajeros.component';
 import { ModificarViajeroComponent } from './viajero/modificar-viajero/modificar-viajero.component';
 import { EditarViajeroComponent } from './viajero/editar-viajero/editar-viajero.component';
+import { AgregarPaqueteComponent } from './paquete/agregar-paquete/agregar-paquete.component';
+import { MostrarPaqueteComponent } from './paquete/mostrar-paquete/mostrar-paquete.component';
+import { MenuPaqueteComponent } from './paquete/menu-paquete/menu-paquete.component';
+import { AgregarItinerarioComponent } from './paquete/agregar-itinerario/agregar-itinerario.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +69,11 @@ import { EditarViajeroComponent } from './viajero/editar-viajero/editar-viajero.
     RegistrarViajeroComponent,
     MostrarViajerosComponent,
     ModificarViajeroComponent,
-    EditarViajeroComponent
+    EditarViajeroComponent,
+    AgregarPaqueteComponent,
+    MostrarPaqueteComponent,
+    MenuPaqueteComponent,
+    AgregarItinerarioComponent
   ],
   imports: [
     BrowserModule,
